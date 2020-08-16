@@ -4,8 +4,11 @@
     "description": "",
     "main": "index.js",
     "scripts": {
+        "clean": "rimraf _site",
         "test": "echo \"Error: no test specified\" && exit 1",
-        "dev": "webpack --mode development",
+        "dev:webpack": "webpack --mode development --watch",
+        "dev:eleventy": "APP_ENV=development eleventy --serve",
+        "server": "npm-run-all --parallel clean dev:*",
         "start": "webpack-dev-server --mode development --open"
     },
     "keywords": [],
@@ -16,6 +19,9 @@
         "autoprefixer": "^9.8.6",
         "css-loader": "^4.2.1",
         "html-webpack-plugin": "^4.3.0",
+        "liquid-loader": "^0.1.4",
+        "mini-css-extract-plugin": "^0.10.0",
+        "npm-run-all": "^4.1.5",
         "postcss": "^7.0.32",
         "postcss-cli": "^7.1.1",
         "postcss-import": "^12.0.1",
