@@ -5,11 +5,12 @@
     "main": "index.js",
     "scripts": {
         "clean": "rimraf _site",
-        "test": "echo \"Error: no test specified\" && exit 1",
-        "dev:webpack": "webpack --mode development --watch",
+        "dev:webpack": "webpack --mode development --watch --hot",
         "dev:eleventy": "APP_ENV=development eleventy --serve",
-        "server": "npm-run-all --parallel clean dev:*",
-        "start": "webpack-dev-server --mode development --open"
+        "dev": "npm-run-all --parallel clean dev:*",
+        "prod:webpack": "webpack --mode production",
+        "prod:eleventy": "APP_ENV=production eleventy",
+        "prod": "npm-run-all --parallel clean prod:*"
     },
     "keywords": [],
     "author": "",
