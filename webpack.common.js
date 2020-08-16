@@ -1,6 +1,6 @@
 // const HtmlWebpackPlugin = require("html-webpack-plugin");
 const path = require("path");
-const MiniCssExtractPlugin = require("mini-css-extract-plugin");
+const MiniCssExtractPlugin = require("mini-css-extract-plugin"); // output all css to asinge file
 
 module.exports = {
     entry: "./src/scripts/index.js",
@@ -20,7 +20,8 @@ module.exports = {
                         importLoaders: 1,
                     },
                 },
-                "postcss-loader", "liquid-loader"
+                "postcss-loader",
+                "liquid-loader",
             ],
         }, ],
     },
@@ -32,4 +33,5 @@ module.exports = {
             filename: "../css/style.css",
         }),
     ],
+
 };
