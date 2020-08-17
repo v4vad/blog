@@ -3,28 +3,40 @@ const path = require("path");
 const MiniCssExtractPlugin = require("mini-css-extract-plugin"); // output all css to asinge file
 
 module.exports = {
-    entry: "./src/scripts/index.js",
+    entry: "./src/assets/scripts/index.js",
     output: {
-        path: path.resolve(__dirname, "_site/scripts"),
+        path: path.resolve(__dirname, "_site/assets/scripts"),
         filename: "main.js",
     },
     module: {
         rules: [{
-            test: /\.css$/,
-            use: [
-                MiniCssExtractPlugin.loader,
-                // this is for using @import
-                {
-                    loader: "css-loader",
-                    options: {
-                        importLoaders: 1,
+                test: /\.css$/,
+                use: [
+                    MiniCssExtractPlugin.loader,
+                    // this is for using @import
+                    {
+                        loader: "css-loader",
+                        options: {
+                            importLoaders: 1,
+                        },
                     },
-                },
-                "postcss-loader",
-                "liquid-loader",
-            ],
-        }, ],
+                    "postcss-loader",
+                    "liquid-loader",
+                ],
+            },
+            {
+                test: /\.(png|svg|jpg|gif)$/,
+                use: [{
+                    loader: "file-loader",
+                    options: {
+                        name: "[name].[ext]",
+                        outputPath: "../images",
+                    },
+                }, ],
+            },
+        ],
     },
+
     plugins: [
         //     new HtmlWebpackPlugin({
         //         template: path.resolve(__dirname, "src", "index.html"),
@@ -33,5 +45,4 @@ module.exports = {
             filename: "../css/style.css",
         }),
     ],
-
 };
