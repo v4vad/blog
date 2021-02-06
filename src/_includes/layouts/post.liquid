@@ -5,24 +5,19 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     
-    <title> Mundane Musings &mdash; Home</title>
+    <title> {{ site.blogName }} &mdash; {{ pageTitle }}</title>
     <link rel="stylesheet" href="../assets/css/style.css">
 </head>
 
 <body class="w-screen h-screen">
     <div class="container mx-auto">
         <header class="border-grey-50 border-b-4">
-            <h1 class="text-5xl text-grey-50-300 text-center my-8 font-bold">Mundane Musings</h1>
+            <h1 class="text-5xl text-grey-50-300 text-center my-8 font-bold">{{ site.blogName }}</h1>
         </header>
 
-        <main>
-            
-                <h3><a href="/posts/post1/">Blog post 1</a></h3>
-            
-                <h3><a href="/posts/post2/">Blog post 2</a></h3>
-            
-        </main>
+        <h2>{{pageTitle}}</h2>
 
+    {{ content }}
     </div>
 </body>
 

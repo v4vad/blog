@@ -5,15 +5,17 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     
-    <title>My Blog</title>
+    <title> {{ site.blogName }} — {{ title }}</title>
     <link rel="stylesheet" href="../assets/css/style.css">
 </head>
 
 <body class="w-screen h-screen">
     <div class="container mx-auto">
-        <header class="border-red-600 border-b-4">
-            
+        <header class="border-grey-50 border-b-4">
+            <h1 class="text-5xl text-grey-50-300 text-center my-8 font-bold">{{ site.blogName }}</h1>
         </header>
+
+        <h2>{{pageTitle}}</h2>
 
     {{ content }}
     </div>

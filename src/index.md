@@ -1,6 +1,4 @@
 ---
 title: Home
-layout: layouts/base.liquid
-pageTitle: "Hello World!"
+layout: layouts/home.liquid
 ---
-I think I finally set it up
